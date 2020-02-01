@@ -11,18 +11,25 @@
         android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome!!!"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/idText"
+    <Button
+        android:id="@+id/soccerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="id"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="축구"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeMessage" />
+
+    <Button
+        android:id="@+id/footsalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="풋살"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeMessage" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

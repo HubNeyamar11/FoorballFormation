@@ -23,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
         final EditText passwordText =(EditText) findViewById(R.id.passwordText);
 
         Button loginButton =(Button) findViewById(R.id.loginButton);
-
         Button registerButton = (Button) findViewById(R.id.registerButton);
 
         db = new DBHelper(this);
@@ -49,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(Chkidpass==true) {
                     Toast.makeText(getApplicationContext(), "로그인 되었습니다.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.putExtra("id",id);
                     startActivityForResult(intent, 1);
                 }else
                     Toast.makeText(getApplicationContext(),"아이디와 비밀번호를 확인 해주세요.",Toast.LENGTH_SHORT).show();

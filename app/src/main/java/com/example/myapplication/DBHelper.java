@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 
 import androidx.annotation.Nullable;
 
@@ -36,7 +37,7 @@ public class DBHelper extends SQLiteOpenHelper {
         else return true;
     }
     // 아이디 존재 하는지 체크
-    public Boolean chkid(String id){
+    public boolean chkid(String id){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select*from user where id=?",new String[]{id});
         if (cursor.getCount()>0) return false;
@@ -44,10 +45,12 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     // 아이디 패스워드 검사
-    public Boolean idpassword(String id, String passowrd){
+    public boolean idpassword(String id, String passowrd){
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("select * from user where id=? and password=?", new String[]{id,passowrd});
         if (cursor.getCount()>0) return true;
         else return false;
     }
+
+
 }
